@@ -5,7 +5,7 @@ A [Hermes Agent](https://github.com/NousResearch/hermes-agent) plugin that shows
 Telegram rich messages have an `is_rtl` flag that right-aligns the whole message, including headings, bullets, numbered lists, tables and quotes. Hermes does not set this flag yet, so replies in these languages show up left-aligned with list markers on the wrong side.
 
 > [!WARNING]
-> This plugin is a temporary workaround. It modifies Hermes core behavior at runtime by wrapping internal methods of the Telegram adapter, since Hermes has no public plugin hook for the outgoing Telegram message. A Hermes update can change those internals without notice. Use the plugin until Hermes supports `is_rtl` natively through an upstream fix, then remove it.
+> This plugin is a temporary workaround. It modifies Hermes core behavior at runtime by wrapping internal methods of the Telegram adapter, since Hermes has no public plugin hook for the outgoing Telegram message. A Hermes update can change those internals without notice. Use the plugin until Hermes supports `is_rtl` natively, then remove it.
 
 ## What it does
 
@@ -42,7 +42,7 @@ To install an exact version, pin the full commit SHA:
 hermes plugins install Yazeed-A-H/hermes-telegram-rtl --ref <40-character-commit-sha> --enable
 ```
 
-In Hermes Desktop, go to **Capabilities → Plugins → Install from Git** and enter `Yazeed-A-H/hermes-telegram-rtl`, or open this link:
+In Hermes Desktop, open the Plugins page, choose **Install from Git** and enter `Yazeed-A-H/hermes-telegram-rtl`, or open this link:
 
 ```
 hermes://plugin/install?repo=Yazeed-A-H/hermes-telegram-rtl&enable=1
@@ -78,7 +78,7 @@ Run `test_patch.py` after every `hermes update`. The plugin depends on three int
 
 ## Limitations
 
-- Because it wraps Hermes internals instead of using a public hook, it fails the `no core override` check in `hermes plugins validate` and cannot be listed in the Hermes plugin catalog.
+- It fails the `no core override` check in `hermes plugins validate`, so it cannot be listed in the Hermes plugin catalog.
 - It works on Telegram only.
 
 ## Removing it
