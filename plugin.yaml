@@ -1,0 +1,9 @@
+name: telegram-rtl
+version: 0.2.0
+description: Sends Arabic Telegram replies as rich messages with is_rtl (RLM fallback on the MarkdownV2 path).
+author: Yazeed-A-H
+requires_hermes: ">=0.22.5"
+manifest_version: 2
+license: MIT
+homepage: https://github.com/Yazeed-A-H/hermes-telegram-rtl
+tags: [gateway, telegram, rtl, arabic]
